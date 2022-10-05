@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>小程序-03 | KevinBlog</title>
+    <meta name="description" content="小程序-03">
+    <link rel="stylesheet" href="/KBLOG_2/assets/style.fdc8bbf2.css">
+    <link rel="modulepreload" href="/KBLOG_2/assets/Home.28853c6e.js">
+    <link rel="modulepreload" href="/KBLOG_2/assets/app.faf383d0.js">
+    <link rel="modulepreload" href="/KBLOG_2/assets/posts_wechat-03.md.657543fe.lean.js">
+    
+    <link rel="icon" type="image/jpeg" href="/avator.jpg">
+  <meta name="author" content="Kevin">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Home of Kevin">
+  <meta name="twitter:title" content="小程序-03 | KevinBlog">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><div class="no-sidebar theme"><header class="nav-bar" data-v-40587210><div class="sidebar-button" data-v-40587210><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/KBLOG_2/" aria-label="KevinBlog, back to home" data-v-40587210 data-v-016a8bd8><img class="logo" src="/KBLOG_2/haimianbaobao.png" alt="Logo" data-v-016a8bd8> KevinBlog</a><div class="flex-grow" data-v-40587210></div><div class="nav" data-v-40587210><nav class="nav-links" data-v-40587210 data-v-35b91e7e><!--[--><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/" data-v-49fe041d>🏡Home <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/tags" data-v-49fe041d>🔖Tags <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/archives" data-v-49fe041d>📃Archives <!----></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--[--><div class="toggleTheme" data-v-f68cd400><div class="light" data-v-f68cd400>🔆</div></div><!--]--><!--]--></header><aside class="sidebar" data-v-17c48e2f><nav class="nav-links nav" data-v-17c48e2f data-v-35b91e7e><!--[--><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/" data-v-49fe041d>🏡Home <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/tags" data-v-49fe041d>🔖Tags <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/archives" data-v-49fe041d>📃Archives <!----></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><!----><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-8fcebc32><div class="container" data-v-8fcebc32><!--[--><!--[--><!----><!--]--><!--[--><!--[--><h1 class="title" data-v-524a1c9d>小程序-03</h1><div class="date" data-v-524a1c9d>🕒 lastUpdated: 14 minutes ago</div><!--]--><div class="category" data-v-4c27e764><ul data-v-4c27e764><!--[--><li class="header" data-v-4c27e764><a href="#一、页面导航" class="header-h1" data-v-4c27e764>一、页面导航</a><!----></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_1-1、声明式导航" class="header-h2" data-v-4c27e764>1.1、声明式导航</a></li></ul></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_1-2、编程式导航" class="header-h2" data-v-4c27e764>1.2、编程式导航</a></li></ul></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_1-3、导航传参" class="header-h2" data-v-4c27e764>1.3、导航传参</a></li></ul></li><li class="header" data-v-4c27e764><a href="#二、页面事件" class="header-h1" data-v-4c27e764>二、页面事件</a><!----></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_2-1、下拉刷新事件" class="header-h2" data-v-4c27e764>2.1、下拉刷新事件</a></li></ul></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_2-2、上拉触底事件" class="header-h2" data-v-4c27e764>2.2、上拉触底事件</a></li></ul></li><li class="header" data-v-4c27e764><a href="#三、生命周期" class="header-h1" data-v-4c27e764>三、生命周期</a><!----></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_3-1、小程序生命周期的分类" class="header-h2" data-v-4c27e764>3.1、小程序生命周期的分类</a></li></ul></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_3-2、应用的生命周期函数" class="header-h2" data-v-4c27e764>3.2、应用的生命周期函数</a></li></ul></li><li class="header" data-v-4c27e764><a href="#四、wxs-脚本" class="header-h1" data-v-4c27e764>四、WXS 脚本</a><!----></li><li class="header" data-v-4c27e764><!----><ul data-v-4c27e764><li data-v-4c27e764><a href="#_4-1、wxs基础语法" class="header-h2" data-v-4c27e764>4.1、WXS基础语法</a></li></ul></li><!--]--></ul></div><!--]--><!--]--><div style="position:relative;" class="content" data-v-8fcebc32><div><h1 id="小程序-03" tabindex="-1">小程序-03 <a class="header-anchor" href="#小程序-03" aria-hidden="true">#</a></h1><h2 id="一、页面导航" tabindex="-1">一、页面导航 <a class="header-anchor" href="#一、页面导航" aria-hidden="true">#</a></h2><p>一、声明式导航</p><ul><li>在页面上声明一个 导航组件</li><li>通过点击 组件实现页面跳转</li></ul><p>二、编程式导航</p><ul><li>调用小程序的导航 API ，实现页面的跳转</li></ul><h3 id="_1-1、声明式导航" tabindex="-1">1.1、声明式导航 <a class="header-anchor" href="#_1-1、声明式导航" aria-hidden="true">#</a></h3><h4 id="_1、-导航到-tabbar-页面" tabindex="-1">1、 导航到 tabBar 页面 <a class="header-anchor" href="#_1、-导航到-tabbar-页面" aria-hidden="true">#</a></h4><p>tabBar 页面指的是被配置为 tabBar 的页面。</p><p>在使用 组件跳转到指定的 tabBar 页面时，需要指定 url 属性和 open-type 属性，其中：</p><ul><li>url 表示要跳转的页面的地址，必须以 / 开头</li><li>open-type 表示跳转的方式，必须为 switchTab 示例代码如下</li></ul><div class="language-html"><pre><code><span class="token comment">&lt;!-- 声明式导航 --&gt;</span>
+<span class="token comment">&lt;!--
+导航到 tabBar页面的方法：
+url必须以“/”根路径开头
+并且必须配置open-type属性值为switchTab
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/pages/message/message<span class="token punctuation">&quot;</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>switchTab<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>导航到消息页面
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_2、导航到非-tabbar-页面" tabindex="-1">2、导航到非 tabBar 页面 <a class="header-anchor" href="#_2、导航到非-tabbar-页面" aria-hidden="true">#</a></h4><p>非 tabBar 页面指的是没有被配置为 tabBar 的页面。</p><p>在使用 组件跳转到普通的非 tabBar 页面时，则需要指定 url 属性和 open-type 属性，其中：</p><ul><li>url 表示要跳转的页面的地址，必须以 / 开头</li><li>open-type 表示跳转的方式，必须为 navigate</li><li>为了方便, 非 tabBar 页码的跳转时 open-type 也可以省略 示例代码如下：</li></ul><div class="language-html"><pre><code><span class="token comment">&lt;!--
+导航到非tabBar页面
+也就是没有被配置为tabBar的页面
+url必须以“/”根路径开头
+如果配置了open-type属性，值为navigate,也可省略不写
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/pages/info/info<span class="token punctuation">&quot;</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>navigate<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>跳转到info页面
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/pages/info/info<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>跳转到info页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_3、后退导航" tabindex="-1">3、后退导航 <a class="header-anchor" href="#_3、后退导航" aria-hidden="true">#</a></h4><p>如果要后退到上一页面或多级页面，则需要指定 open-type 属性和 delta 属性，其中</p><ul><li>open-type 的值必须是 navigateBack ，表示要进行后退导航</li><li>delta 的值必须是数字，表示要后退的层级</li></ul><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>navigateBack<span class="token punctuation">&quot;</span></span> <span class="token attr-name">delta</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>后退<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>navigateBack<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>后退<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>注意：</p><ul><li>为了简便，如果只是后退到上一页面，则可以省略 delta 属性，因为其默认值就是 1</li><li>tabBar 页面是不能实现后退的效果的. 因为, 当我们跳转到 tabBar 页面，会关闭其他所有非 tabBar 页面,所以当处于 tabBar 页面时, 无页面可退</li></ul><h3 id="_1-2、编程式导航" tabindex="-1">1.2、编程式导航 <a class="header-anchor" href="#_1-2、编程式导航" aria-hidden="true">#</a></h3><h4 id="_1、导航到-tabbar-页面" tabindex="-1">1、导航到 tabBar 页面 <a class="header-anchor" href="#_1、导航到-tabbar-页面" aria-hidden="true">#</a></h4><p>调用 wx.switchTab(Object object) 方法，可以跳转到 tabBar 页面。其中 Object 参数对象的属 性列表如下</p><p>参数</p><p>Object object</p><table><thead><tr><th style="text-align:left;">属性</th><th style="text-align:left;">类型</th><th style="text-align:left;">默认值</th><th style="text-align:left;">必填</th><th style="text-align:left;">说明</th></tr></thead><tbody><tr><td style="text-align:left;">url</td><td style="text-align:left;">string</td><td style="text-align:left;"></td><td style="text-align:left;">是</td><td style="text-align:left;">需要跳转的 tabBar 页面的路径 (代码包路径)（需在 app.json 的 <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabbar" target="_blank" rel="noopener noreferrer">tabBar</a> 字段定义的页面），路径后不能带参数。</td></tr><tr><td style="text-align:left;">success</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用成功的回调函数</td></tr><tr><td style="text-align:left;">fail</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用失败的回调函数</td></tr><tr><td style="text-align:left;">complete</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用结束的回调函数（调用成功、失败都会执行）</td></tr></tbody></table><div class="language-html"><pre><code><span class="token comment">&lt;!--
+编程式导航
+跳转至tabBar页面
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>gotoMessage<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>跳转到messae页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js"><pre><code>  <span class="token comment">// 通过编程式导航</span>
+  <span class="token comment">// 跳转至tabBar页面</span>
+  <span class="token comment">// message页面</span>
+  <span class="token function">gotoMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">switchTab</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 代表要跳转的路径</span>
+      url<span class="token operator">:</span> <span class="token string">&#39;/pages/message/message&#39;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h4 id="_2、导航到非-tabbar-页面-1" tabindex="-1">2、导航到非 tabBar 页面 <a class="header-anchor" href="#_2、导航到非-tabbar-页面-1" aria-hidden="true">#</a></h4><p>调用 wx.navigateTo(Object object) 方法，可以跳转到非 tabBar 的页面。</p><p>其中 Object 参数对象的属性列表, 如下：</p><table><thead><tr><th style="text-align:left;">属性</th><th style="text-align:left;">类型</th><th style="text-align:left;">默认值</th><th style="text-align:left;">必填</th><th style="text-align:left;">说明</th></tr></thead><tbody><tr><td style="text-align:left;">url</td><td style="text-align:left;">string</td><td style="text-align:left;"></td><td style="text-align:left;">是</td><td style="text-align:left;">需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。参数与路径之间使用 <code>?</code> 分隔，参数键与参数值用 <code>=</code> 相连，不同参数用 <code>&amp;</code> 分隔；如 &#39;path?key=value&amp;key2=value2&#39;</td></tr><tr><td style="text-align:left;">events</td><td style="text-align:left;">Object</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">页面间通信接口，用于监听被打开页面发送到当前页面的数据。基础库 2.7.3 开始支持。</td></tr><tr><td style="text-align:left;">success</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用成功的回调函数</td></tr><tr><td style="text-align:left;">fail</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用失败的回调函数</td></tr><tr><td style="text-align:left;">complete</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用结束的回调函数（调用成功、失败都会执行）</td></tr></tbody></table><div class="language-html"><pre><code><span class="token comment">&lt;!--
+编程式导航
+跳转至非 tabBar页面
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>gotoInfo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>跳转到Info页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js"><pre><code>  <span class="token comment">// 通过编程式导航</span>
+  <span class="token comment">// 跳转至非tabBar页面</span>
+  <span class="token comment">// Info页面</span>
+  <span class="token function">gotoInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">&#39;/pages/info/info&#39;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+</code></pre></div><h4 id="_3、后退导航-1" tabindex="-1">3、后退导航 <a class="header-anchor" href="#_3、后退导航-1" aria-hidden="true">#</a></h4><p>调用 <code>wx.navigateBack(Object object)</code> 方法，可以返回上一页面或多级页面。 其中 Object 参数对象可选的, 属性列表如下：</p><table><thead><tr><th style="text-align:left;">属性</th><th style="text-align:left;">类型</th><th style="text-align:left;">默认值</th><th style="text-align:left;">必填</th><th style="text-align:left;">说明</th></tr></thead><tbody><tr><td style="text-align:left;">delta</td><td style="text-align:left;">number</td><td style="text-align:left;">1</td><td style="text-align:left;">否</td><td style="text-align:left;">返回的页面数，如果 delta 大于现有页面数，则返回到首页。</td></tr><tr><td style="text-align:left;">success</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用成功的回调函数</td></tr><tr><td style="text-align:left;">fail</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用失败的回调函数</td></tr><tr><td style="text-align:left;">complete</td><td style="text-align:left;">function</td><td style="text-align:left;"></td><td style="text-align:left;">否</td><td style="text-align:left;">接口调用结束的回调函数（调用成功、失败都会执行）</td></tr></tbody></table><div class="language-html"><pre><code><span class="token comment">&lt;!--
+通过编程式导航实现后退导航
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>goBack<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>编程式导航实现后退<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js"><pre><code>  <span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果不传递参数就是返回上一页</span>
+    <span class="token comment">// 如果要传递参数则是传递 delta数字型， 代表返回的层级。</span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">注意</p><p>tabBar 页面是不能实现后退的效果的. 因为, 当我们跳转到 tabBar 页面，会关闭其他所有非 tabBar 页面,所以当处于 tabBar 页面时, 无页面可退</p></div><h3 id="_1-3、导航传参" tabindex="-1">1.3、导航传参 <a class="header-anchor" href="#_1-3、导航传参" aria-hidden="true">#</a></h3><h4 id="_1、声明式导航传参" tabindex="-1">1、声明式导航传参 <a class="header-anchor" href="#_1、声明式导航传参" aria-hidden="true">#</a></h4><p>navigator 组件的 url 属性用来指定将要跳转到的页面的路径。同时，路径的后面还可以携带参数：</p><ul><li>参数与路径之间使用 ? 分隔</li><li>参数键与参数值用 = 相连</li><li>不同参数用 &amp; 分隔</li></ul><div class="language-html"><pre><code><span class="token comment">&lt;!--
+声明式导航传参
+参数与路径之间使用 ? 分隔
+参数键与参数值用 = 相连
+不同参数用 &amp; 分隔
+--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>navigator</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/pages/info/info?name=zs&amp;age=20<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>跳转至info页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>navigator</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>2、编程式导航传参</p><p>调用 <code>wx.navigateTo(Object object)</code> 方法跳转页面时，也可以携带参数，代码示例如下</p><div class="language-"><pre><code>&lt;!--
+编程式导航传参
+--&gt;
+&lt;button bindtap=&quot;gotoInfo2&quot;&gt;跳转到info页面&lt;/button&gt;
+</code></pre></div><div class="language-"><pre><code>  //编程式导航传递参数
+  gotoInfo2() {
+    wx.navigateTo({
+      url: &#39;/pages/info/info?name=李&amp;gender=男&#39;,
+    })
+  },
+</code></pre></div><h4 id="_3、在-onload-中接收导航参数" tabindex="-1">3、在 onLoad 中接收导航参数 <a class="header-anchor" href="#_3、在-onload-中接收导航参数" aria-hidden="true">#</a></h4><p>通过<strong>声明式导航传参</strong>或<strong>编程式导航传参</strong>所携带的<strong>参数</strong>，可以直接在 <code>onLoad</code> 事件中直接获取到，示例代 码如下：</p><div class="language-js"><pre><code><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    query<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">//导航传递的参数</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 通过声明式导航和编程式导航 </span>
+    <span class="token comment">// 都可以在onLoad声明周期函数中获取传递的参数</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 将导航传递的参数转存在data中</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      query<span class="token operator">:</span> options
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="二、页面事件" tabindex="-1">二、页面事件 <a class="header-anchor" href="#二、页面事件" aria-hidden="true">#</a></h2><h3 id="_2-1、下拉刷新事件" tabindex="-1">2.1、下拉刷新事件 <a class="header-anchor" href="#_2-1、下拉刷新事件" aria-hidden="true">#</a></h3><p>下拉刷新是移动端的专有名词，指的是通过手指在屏幕上的下拉滑动操作，从而重新加载页面数据的行为。</p><h4 id="_1、启用下拉刷新有两种方式：" tabindex="-1">1、启用下拉刷新有两种方式： <a class="header-anchor" href="#_1、启用下拉刷新有两种方式：" aria-hidden="true">#</a></h4><ol><li>全局开启下拉刷新：在 <code>app.json</code> 的 window 节点中，将 <code>enablePullDownRefresh</code> 设置为 true</li><li>局部开启下拉刷新：在页面的 <code>.json</code> 配置文件中，将 <code>enablePullDownRefresh</code> 设置为 true</li></ol><p>在实际开发中，推荐使用第 2 种方式，为需要的页面单独开启下拉刷新的效果。</p><h4 id="_2、配置下拉刷新窗口的样式：" tabindex="-1">2、配置下拉刷新窗口的样式： <a class="header-anchor" href="#_2、配置下拉刷新窗口的样式：" aria-hidden="true">#</a></h4><p>在全局或页面的 <code>.json</code> 配置文件中，通过 <code>backgroundColor</code> 和 <code>backgroundTextStyle</code> 来配置下拉 刷新窗口的样式，其中：</p><ul><li><code>backgroundColor</code> 用来配置下拉刷新窗口的背景颜色，仅支持16 进制的颜色值</li><li><code>backgroundTextStyle</code> 用来配置下拉刷新 loading 的样式，仅支持 dark 和 light监听页面的下拉刷新事件</li></ul><h4 id="_3、监听页面的下拉刷新事件" tabindex="-1">3、监听页面的下拉刷新事件 <a class="header-anchor" href="#_3、监听页面的下拉刷新事件" aria-hidden="true">#</a></h4><p>在页面的 .js 文件中，通过 <code>onPullDownRefresh()</code> 函数即可监听当前页面的下拉刷新事件。</p><p>例如，在页面的 wxml 中有如下的 UI 结构，点击按钮可以让 count 值自增 +1：</p><div class="language-js"><pre><code><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    query<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">//导航传递的参数</span>
+    count<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">addCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      count<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">//页面相关事件处理函数--监听用户下拉动作</span>
+  <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 触发了下拉刷新事件就会立即调用该方法</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;触发了下拉刷新&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 触发了下拉刷洗就将data中的count重置为0</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      count<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_4、停止下拉刷新的效果" tabindex="-1">4、停止下拉刷新的效果 <a class="header-anchor" href="#_4、停止下拉刷新的效果" aria-hidden="true">#</a></h4><p>当处理完下拉刷新后，下拉刷新的 loading 效果会一直显示，不会主动消失，所以需要手动隐藏下拉 刷新的</p><p>loading 效果。此时，调用 <code>wx.stopPullDownRefresh()</code> 可以停止当前页面的下拉刷新。示例代码如 下：</p><div class="language-js"><pre><code>  <span class="token comment">//页面相关事件处理函数--监听用户下拉动作</span>
+  <span class="token function-variable function">onPullDownRefresh</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">&#39;GET&#39;</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token constant">XXX</span><span class="token operator">:</span> res<span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token comment">// 数值处理完毕，就可以关闭下拉刷新的事件了</span>
+        wx<span class="token punctuation">.</span><span class="token function">stopPullDownRefresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h3 id="_2-2、上拉触底事件" tabindex="-1">2.2、上拉触底事件 <a class="header-anchor" href="#_2-2、上拉触底事件" aria-hidden="true">#</a></h3><p>上拉触底是移动端的专有名词，通过手指在屏幕上的上拉滑动操作，从而加载更多数据的行为。</p><h4 id="_1、-监听页面的上拉触底事件" tabindex="-1">1、. 监听页面的上拉触底事件 <a class="header-anchor" href="#_1、-监听页面的上拉触底事件" aria-hidden="true">#</a></h4><p>在页面的 .js 文件中，通过 <code>onReachBottom()</code> 函数即可监听当前页面的上拉触底事件。示例代码如 下：</p><div class="language-js"><pre><code>  <span class="token comment">//页面上拉触底事件的处理函数</span>
+  <span class="token function-variable function">onReachBottom</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*
+    上拉触底事件不需要开启，直接监听就可以
+    在全局配置的window节点中或者页面的配置文件中可设置触底距离：
+    上拉触底的距离：默认50像素，单位省去,我们会在触发了上拉触底事件时获取下一页的数据
+    &quot;onReachBottomDistance&quot;: 50
+    */</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;触发了上拉触底事件&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*
+    在上拉触底事件中，需要做节流处理
+    防止频繁触发该事件导致频繁发起请求
+    */</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h4 id="_3、配置上拉触底距离" tabindex="-1">3、配置上拉触底距离 <a class="header-anchor" href="#_3、配置上拉触底距离" aria-hidden="true">#</a></h4><p>上拉触底距离指的是触发上拉触底事件时，滚动条距离页面底部的距离。</p><p>可以在全局或页面的 .json 配置文件中，通过 <code>onReachBottomDistance</code> 节点来配置上拉触底的距 离。</p><p>小程序默认的触底距离是 50px ，在实际开发中，可以根据自己的需求修改这个默认值。</p><p><strong>对上拉触底进行节流处理</strong></p><p>1、在 data 中定义 isLoading 节流阀</p><ul><li>false 表示当前没有进行任何数据请求</li><li>true 表示当前正在进行数据请求</li></ul><div class="language-js"><pre><code><span class="token comment">/**
+* 页面的初始数据
+*/</span>
+data<span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token comment">// 随机颜色数组</span>
+colorList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token comment">// 节流阀: false代表当前没有进行任何数据请求</span>
+isLoading<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+</code></pre></div><p>2、在 getColors() 方法中修改 isloading 节流阀的值</p><ul><li>在刚调用 getColors 时将节流阀设置 true</li><li>在网络请求的 complete 回调函数中，将节流阀重置为 false</li></ul><div class="language-js"><pre><code>  <span class="token function">getColors</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1.展示loading效果</span>
+    wx<span class="token punctuation">.</span><span class="token function">showLoading</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      title<span class="token operator">:</span> <span class="token string">&#39;数据加载中...&#39;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 2.开启节流阀</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      isLoading<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 3.发起网络请求</span>
+    wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">&#39;https://www.escook.cn/api/color&#39;</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">&#39;GET&#39;</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+        data<span class="token operator">:</span> res
+      <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 修改data中的数据</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token comment">// 使用展开运算符获取到每一个数据，再将数据进行拼接</span>
+          colorList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>colorList<span class="token punctuation">,</span> <span class="token operator">...</span>res<span class="token punctuation">.</span>data<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 无论成功与否都会调用该方法</span>
+      <span class="token function-variable function">complete</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 4.隐藏loading效果</span>
+        wx<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">// 5.关闭节流阀</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          isLoading<span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>3、在 onReachBottom 中判断节流阀的值，从而对数据请求进行节流控制</p><ul><li>如果节流阀的值为 true ，则阻止当前请求</li><li>如果节流阀的值为 false ，则发起数据请求</li></ul><div class="language-js"><pre><code><span class="token comment">/**
+* 页面上拉触底事件的处理函数
+*/</span>
+<span class="token function-variable function">onReachBottom</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>isLoading<span class="token punctuation">)</span> <span class="token keyword">return</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getColors</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+</code></pre></div><h2 id="三、生命周期" tabindex="-1">三、生命周期 <a class="header-anchor" href="#三、生命周期" aria-hidden="true">#</a></h2><h3 id="_3-1、小程序生命周期的分类" tabindex="-1">3.1、小程序生命周期的分类 <a class="header-anchor" href="#_3-1、小程序生命周期的分类" aria-hidden="true">#</a></h3><ol><li>应用生命周期 ：特指小程序从启动 -&gt; 运行 -&gt; 销毁的过程</li><li>页面生命周期 ： 特指小程序中，每个页面的加载 -&gt; 渲染 -&gt; 销毁的过程</li></ol><p>其中，页面的生命周期范围较小，应用程序的生命周期范围较大，如图所示：</p><p>页面生命周期：</p><p><img src="/KBLOG_2/assets/page-lifecycle.3d33fad9.png" alt=""></p><p><img src="/KBLOG_2/assets/life.b93ac091.png" alt=""></p><p>小程序启动 &gt; 页面A的生命周期 &gt; 页面B的生命周期 &gt; 页面C的生命周期 &gt; etc.. &gt; 小程序结束</p><h3 id="_3-2、应用的生命周期函数" tabindex="-1">3.2、应用的生命周期函数 <a class="header-anchor" href="#_3-2、应用的生命周期函数" aria-hidden="true">#</a></h3><p>小程序的应用生命周期函数需要在 app.js 中进行声明，示例代码如下：</p><div class="language-js"><pre><code><span class="token comment">// app.js</span>
+<span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+   */</span>
+  <span class="token function-variable function">onLaunch</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;onLaunch&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/**
+   * 当小程序启动，或从后台进入前台显示，会触发 onShow
+   * 前台：手机打开该小程序就处于前台运行
+   * 后台：手机回到主页，且未关闭小程序，此时小程序就处于后台运行
+   */</span>
+  <span class="token function-variable function">onShow</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;onShow&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/**
+   * 当小程序从前台进入后台，会触发 onHide
+   */</span>
+  <span class="token function-variable function">onHide</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;onHide&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>3.3、页面的生命周期函数</p><p>小程序的页面生命周期函数需要在页面的 .js 文件中进行声明，示例代码如下：</p><div class="language-js"><pre><code><span class="token comment">/**
+* 生命周期函数--监听页面加载,一个页面只调用一次
+*/</span>
+<span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">/**
+* 生命周期函数--监听页面初次渲染完成，一个页面只调用一次
+*/</span>
+<span class="token function-variable function">onReady</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">/**
+* 生命周期函数--监听页面显示
+*/</span>
+<span class="token function-variable function">onShow</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">/**
+* 生命周期函数--监听页面隐藏
+*/</span>
+<span class="token function-variable function">onHide</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">/**
+* 生命周期函数--监听页面卸载，一个页面只调用一次
+*/</span>
+<span class="token function-variable function">onUnload</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+</code></pre></div><h2 id="四、wxs-脚本" tabindex="-1">四、WXS 脚本 <a class="header-anchor" href="#四、wxs-脚本" aria-hidden="true">#</a></h2><p>WXS （ WeiXin Script ）是小程序独有的一套脚本语言，结合 WXML ，可以构建出页面的结构。</p><p>wxml 中无法调用在页面的 .js 中定义的函数（不包括事件绑定），但是， wxml 中可以调用 wxs 中 定义的函数。因此，小程序中 wxs 的典型应用场景就是“<code>过滤器</code>”。</p><p>wxs 和 JavaScript 的关系：</p><p>虽然 wxs 的语法类似于 JavaScript ，但是 wxs 和 JavaScript 是完全不同的两种语言：</p><ol><li>wxs 有自己的数据类型：number 数值类型、 string 字符串类型、 boolean 布尔类型、 object 对象类型、 function 函数类型、 array 数组类型、 date 日期类型、 regexp 正则</li><li>wxs 不支持类似于 ES6 及以上的语法形式：不支持： let 、 const 、解构赋值、展开运算符、箭头函数、对象属性简写、etc... 支持： var 定义变量、普通 function 函数等类似于 ES5 的语法</li><li>wxs 遵循 CommonJS 规范：module 对象 require() 函数 module.exports 对象</li></ol><h3 id="_4-1、wxs基础语法" tabindex="-1">4.1、WXS基础语法 <a class="header-anchor" href="#_4-1、wxs基础语法" aria-hidden="true">#</a></h3><h4 id="_1、内嵌wxs脚本" tabindex="-1">1、内嵌<code>wxs</code>脚本 <a class="header-anchor" href="#_1、内嵌wxs脚本" aria-hidden="true">#</a></h4><p>wxs 代码可以编写在 wxml 文件中的 标签内，就像 Javascript 代码可以编写在 html 文件中的 标 签内一样。</p><p>wxml 文件中的每个 标签，必须提供 module 属性，用来指定当前 wxs 的模块名称，方便在wxml 中访问模块中的成员：</p><div class="language-html"><pre><code><span class="token comment">&lt;!-- 定义一个文本，调用wxs中的方法 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>{{ m1.toUpper(username) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 定义一个wxs的标签，并指定module模块名称 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wxs</span> <span class="token attr-name">module</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>m1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  // 向外暴露一个方法
+  module.exports.toUpper = function (str) {
+    return str.toUpperCase()
+  }
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wxs</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>2、外联的 <code>wxs</code> 脚本</p><p>wxs 代码还可以编写在以 .wxs 为后缀名的文件内，就像 Javascript 代码可以编写在以 .js 为后 缀名的文件中一样。示例代码如下：</p><div class="language-js"><pre><code><span class="token comment">// tools.wxs</span>
+<span class="token comment">// 1.定义方法</span>
+<span class="token keyword">function</span> <span class="token function">toLower</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2.暴露成员</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+	toLower<span class="token operator">:</span> toLower
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 wxml 中引入外联的 wxs 脚本时，必须为 标签添加 module 和 src 属性，其中：</p><ol><li>module 用来指定模块的名称</li><li>src 用来指定要引入的脚本的路径，且必须是相对路径</li></ol><div class="language-html"><pre><code><span class="token comment">&lt;!-- 1.使用外联式引入外部的wxs文件 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wxs</span> <span class="token attr-name">module</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>m2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../../utils/tools.wxs<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wxs</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 2.调用 m2 模块的方法 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>{{ m2.toLower(&#39;country&#39;) }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="_2、wxs-的特点" tabindex="-1">2、WXS 的特点 <a class="header-anchor" href="#_2、wxs-的特点" aria-hidden="true">#</a></h4><p>为了降低 wxs （ WeiXin Script ）的学习成本， wxs 语言在设计时借大量鉴了 JavaScript 的语 法。但是本质上， wxs 和 JavaScript 是完全不同的两种语言！</p><p>不能作为组件的事件回调</p><p>wxs 典型的应用场景就是“过滤器”，经常配合 Mustache 语法进行使用，例如：</p><p>隔离性：</p><p>隔离性指的是 wxs 的运行环境和其他 JavaScript 代码是隔离的。体现在如下两方面</p><ol><li>wxs 不能调用 js 中定义的函数</li><li>wxs 不能调用小程序提供的 API</li></ol><p>性能好</p><ul><li>在 iOS 设备上，小程序内的 WXS 会比 JavaScript 代码快 2 ~ 20 倍</li><li>在 Android 设备上，二者的运行效率无差异</li></ul></div></div><footer class="page-footer" data-v-8fcebc32 data-v-5c96fb00><div class="edit" data-v-5c96fb00><div class="edit-link" data-v-5c96fb00 data-v-55695e90><!----></div></div><div class="updated" data-v-5c96fb00><!----></div></footer><!----><!--[--><!--[--><!----><!--]--><!--[--><!----><!--]--><!--]--></div></main></div><!----><!--]--><footer data-v-15d3260c> Powered by <a href="https://github.com/clark-cui/" target="_blank" title="作者" data-v-15d3260c>clark-cui</a> | Copyright © 2019-2022 | MIT License </footer><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"readme.md\":\"f901fee4\",\"archives.md\":\"19ed9e94\",\"index.md\":\"b29d5498\",\"posts_ajax.md\":\"2dbb7b6a\",\"posts_git.md\":\"81144454\",\"posts_react.md\":\"35360c4f\",\"posts_es6模块化.md\":\"db1b3df9\",\"posts_npm使用手册.md\":\"f25509cd\",\"posts_npm命令发生的事.md\":\"21a8624d\",\"posts_vue3快速上手.md\":\"f3945d84\",\"posts_wechat-01.md\":\"2c6ac550\",\"posts_wechat-02.md\":\"90a06b4d\",\"posts_wechat-03.md\":\"657543fe\",\"posts_wechat-04.md\":\"c2e323b2\",\"posts_wechat-05.md\":\"8b1303ae\",\"tags.md\":\"99f27d27\"}")</script>
+    <script type="module" async src="/KBLOG_2/assets/app.faf383d0.js"></script>
+    
+  </body>
+</html>
