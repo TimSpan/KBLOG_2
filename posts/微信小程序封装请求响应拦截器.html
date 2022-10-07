@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>微信小程序封装请求响应拦截器 | KevinBlog</title>
+    <meta name="description" content="微信小程序封装请求响应拦截器">
+    <link rel="stylesheet" href="/KBLOG_2/assets/style.6d00581b.css">
+    <link rel="modulepreload" href="/KBLOG_2/assets/Home.ade7884b.js">
+    <link rel="modulepreload" href="/KBLOG_2/assets/app.469c13bb.js">
+    <link rel="modulepreload" href="/KBLOG_2/assets/posts_微信小程序封装请求响应拦截器.md.9c885644.lean.js">
+    
+    <link rel="icon" type="image/jpeg" href="/avator.jpg">
+  <meta name="author" content="Kevin">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Home of Kevin">
+  <meta name="twitter:title" content="微信小程序封装请求响应拦截器 | KevinBlog">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><div class="no-sidebar theme"><header class="nav-bar" data-v-40587210><div class="sidebar-button" data-v-40587210><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/KBLOG_2/" aria-label="KevinBlog, back to home" data-v-40587210 data-v-016a8bd8><img class="logo" src="/KBLOG_2/haimianbaobao.png" alt="Logo" data-v-016a8bd8> KevinBlog</a><div class="flex-grow" data-v-40587210></div><div class="nav" data-v-40587210><nav class="nav-links" data-v-40587210 data-v-35b91e7e><!--[--><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/" data-v-49fe041d>🏡Home <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/tags" data-v-49fe041d>🔖Tags <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/archives" data-v-49fe041d>📃Archives <!----></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--[--><div class="toggleTheme" data-v-f68cd400><div class="light" data-v-f68cd400>🔆</div></div><!--]--><!--]--></header><aside class="sidebar" data-v-17c48e2f><nav class="nav-links nav" data-v-17c48e2f data-v-35b91e7e><!--[--><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/" data-v-49fe041d>🏡Home <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/tags" data-v-49fe041d>🔖Tags <!----></a></div></div><div class="item" data-v-35b91e7e><div class="nav-link" data-v-35b91e7e data-v-49fe041d><a class="item" href="/KBLOG_2/archives" data-v-49fe041d>📃Archives <!----></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><!----><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-8fcebc32><div class="container" data-v-8fcebc32><!--[--><!--[--><!----><!--]--><!--[--><h1 class="title" data-v-cda39220></h1><!----><!--]--><!--]--><div style="position:relative;" class="content" data-v-8fcebc32><div><h1 id="微信小程序封装请求响应拦截器" tabindex="-1">微信小程序封装请求响应拦截器 <a class="header-anchor" href="#微信小程序封装请求响应拦截器" aria-hidden="true">#</a></h1><div class="language-js"><pre><code><span class="token keyword">class</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 请求的根路径</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>baseUrl <span class="token operator">=</span> options<span class="token punctuation">.</span>baseUrl <span class="token operator">||</span> <span class="token string">&#39;&#39;</span>
+    <span class="token comment">// 请求的 url 地址</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> options<span class="token punctuation">.</span>url <span class="token operator">||</span> <span class="token string">&#39;&#39;</span>
+    <span class="token comment">// 请求方式</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&#39;GET&#39;</span>
+    <span class="token comment">// 请求的参数对象</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token comment">// header 请求头</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>header <span class="token operator">=</span> options<span class="token punctuation">.</span>header <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>beforeRequest <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>afterRequest <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&#39;GET&#39;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>baseUrl <span class="token operator">+</span> url
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">post</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&#39;POST&#39;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>baseUrl <span class="token operator">+</span> url
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">put</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&#39;PUT&#39;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>baseUrl <span class="token operator">+</span> url
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">delete</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&#39;DELETE&#39;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>baseUrl <span class="token operator">+</span> url
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">_</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 清空 header 对象</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>header <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">// 请求之前做一些事</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>beforeRequest <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> <span class="token keyword">this</span><span class="token punctuation">.</span>beforeRequest <span class="token operator">===</span> <span class="token string">&#39;function&#39;</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">beforeRequest</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token comment">// 发起请求</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> weixin <span class="token operator">=</span> wx
+      <span class="token comment">// 适配 uniapp</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&#39;undefined&#39;</span> <span class="token operator">!==</span> <span class="token keyword">typeof</span> uni<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        weixin <span class="token operator">=</span> uni
+      <span class="token punctuation">}</span>
+      weixin<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        url<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+        method<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>method<span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+        header<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>header<span class="token punctuation">,</span>
+        <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">fail</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">complete</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 请求完成以后做一些事情</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>afterRequest <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> <span class="token keyword">this</span><span class="token punctuation">.</span>afterRequest <span class="token operator">===</span> <span class="token string">&#39;function&#39;</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">afterRequest</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> $http <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>使用：在main.js</p><div class="language-js"><pre><code><span class="token number">1</span>、导入包
+uni<span class="token punctuation">.</span>$http <span class="token operator">=</span> $http
+<span class="token comment">// 配置请求根路径</span>
+$http<span class="token punctuation">.</span>baseUrl <span class="token operator">=</span> <span class="token string">&#39;https://www.xxx.com&#39;</span>
+<span class="token comment">// 请求开始之前做一些事情</span>
+$http<span class="token punctuation">.</span><span class="token function-variable function">beforeRequest</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  uni<span class="token punctuation">.</span><span class="token function">showLoading</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">&#39;数据加载中...&#39;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 请求完成之后做一些事情 // 响应拦截器</span>
+$http<span class="token punctuation">.</span><span class="token function-variable function">afterRequest</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  uni<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 封装的展示消息提示的方法</span>
+uni<span class="token punctuation">.</span><span class="token function-variable function">$showMsg</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>title <span class="token operator">=</span> <span class="token string">&#39;数据加载失败！&#39;</span><span class="token punctuation">,</span> duration <span class="token operator">=</span> <span class="token number">1500</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  uni<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    title<span class="token punctuation">,</span>
+    duration<span class="token punctuation">,</span>
+    icon<span class="token operator">:</span> <span class="token string">&#39;none&#39;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>更简单的封装：</p><div class="language-js"><pre><code><span class="token keyword">import</span> config <span class="token keyword">from</span> <span class="token string">&#39;./config&#39;</span> <span class="token comment">// 服务器配置文件</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">&#39;GET&#39;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		<span class="token comment">// new Promise 初始化promise实例的状态为pending</span>
+		<span class="token comment">// 紧接着 执行异步任务</span>
+		wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			url<span class="token operator">:</span> config<span class="token punctuation">.</span>host <span class="token operator">+</span> url<span class="token punctuation">,</span>
+			data<span class="token punctuation">,</span>
+			method<span class="token punctuation">,</span>
+			<span class="token comment">// 如果异步任务成功了 就使用 resolve，reject修改promise 的状态，</span>
+			<span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+				console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;请求成功&#39;</span><span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token function-variable function">fail</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+				console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;请求失败&#39;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div></div><footer class="page-footer" data-v-8fcebc32 data-v-5c96fb00><div class="edit" data-v-5c96fb00><div class="edit-link" data-v-5c96fb00 data-v-55695e90><!----></div></div><div class="updated" data-v-5c96fb00><!----></div></footer><!----><!--[--><!--[--><!----><!--]--><!--[--><!----><!--]--><!--]--></div></main></div><!----><!--]--><footer data-v-c1f40558> Copyright © 2019-2022 | MIT License </footer><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"readme.md\":\"1664d5de\",\"archives.md\":\"a93e3c02\",\"index.md\":\"6066b00b\",\"posts_ajax.md\":\"8bb4e762\",\"posts_git.md\":\"25f6a723\",\"posts_react.md\":\"62c6d271\",\"posts_es6模块化.md\":\"84b14997\",\"posts_npm使用手册.md\":\"0d5399ce\",\"posts_npm命令发生的事.md\":\"34a2fd25\",\"posts_vue3快速上手.md\":\"1a8c493c\",\"posts_wechat-01.md\":\"b5cf39a5\",\"posts_wechat-02.md\":\"caaebcbb\",\"posts_wechat-03.md\":\"e9bb856f\",\"posts_wechat-04.md\":\"0082938c\",\"posts_wechat-05.md\":\"dc34dbbe\",\"posts_微信小程序封装请求响应拦截器.md\":\"9c885644\",\"tags.md\":\"3781aadb\"}")</script>
+    <script type="module" async src="/KBLOG_2/assets/app.469c13bb.js"></script>
+    
+  </body>
+</html>
