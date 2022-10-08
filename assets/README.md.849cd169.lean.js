@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.bb1174c4.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","lastUpdated":1665124728855}',r={};function o(s,c,n,p,_,d){return a(),e("div")}var l=t(r,[["render",o]]);export{f as __pageData,l as default};
